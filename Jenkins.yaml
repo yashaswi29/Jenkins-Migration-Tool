@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    stages {
+      stage('Clone Repository') {
+        steps {
+          git url: 'https://github.com/yashaswi29/cicd-weather-app.git', branch: 'master'
+          }
+          }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t weather-app:latest .'
+            }
+        }
+
+        stage('Push Docker Image to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerHub', usernameVariable: 'dockerHubUser', passwordVariable: 'dockerHubPass')]) {
+                    sh 'echo $dockerHubPass | docker login -u $dockerHubUser --password-stdin'
+                    sh 'docker tag weather-app:latest yashaswi29/weather-app:latest'
+                    sh 'docker push yashaswi29/weather-app:latest'
+                }
+            }
+        }
+
+        stage('Deploy Docker Container') {
+            steps {
+                script {
+                    def existingContainer = sh(script: 'docker ps -q -f name=weather-app', returnStdout: true).trim()
+                    if (existingContainer) {
+                        sh 'docker stop weather-app'
+                        sh 'docker rm weather-app'
+                    }
+                    sh 'docker run -d --name weather-app -p 9000:9000 weather-app:latest'
+                }
+            }
+        }
+    }
+}
