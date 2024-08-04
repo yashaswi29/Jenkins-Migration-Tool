@@ -19,12 +19,12 @@ jobs:
           wget -q -O - https://get.jenkins.io/cli | bash
       - name: Install Plugins
         run: |
-          jenkins-cli --url https://your-jenkins-url --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} install-plugin -f plugins.txt
+          jenkins-cli --url http://localhost:8080/ --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} install-plugin -f plugins.txt
       - name: Upload JCasC Configuration
         run: |
-          jenkins-cli --url https://your-jenkins-url --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} upload-configuration jcasc.yaml
+          jenkins-cli --url http://localhost:8080/ --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} upload-configuration jcasc.yaml
       - name: Reload Jenkins Configuration
         run: |
-          jenkins-cli --url https://your-jenkins-url --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} safe-restart
+          jenkins-cli --url http://localhost:8080/ --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} safe-restart
       - name: Run Custom Script (Optional)  
         run: python3 test1.py
