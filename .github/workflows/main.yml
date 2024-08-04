@@ -7,11 +7,12 @@ on:
 jobs:
   build_jenkins:
     runs-on: ubuntu-latest
+    env:
+      JENKINS_URL: http://localhost:8080/
     steps:
       - uses: actions/checkout@v3
       - name: Download Java
         run: |
-          # sudo apt-get install openjdk-11-jre-headless
           java --version
       - uses: actions/checkout@v3
       - name: Install Jenkins CLI
@@ -19,12 +20,12 @@ jobs:
           wget -q -O - https://get.jenkins.io/cli | bash
       - name: Install Plugins
         run: |
-          jenkins-cli --url http://localhost:8080/ --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} install-plugin -f plugins.txt
+          java -jar jenkins-cli.jar -s --url ${{ env.JENKINS_URL }} --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} install-plugin -f plugins.txt
       - name: Upload JCasC Configuration
         run: |
-          jenkins-cli --url http://localhost:8080/ --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} upload-configuration jcasc.yaml
+          java -jar jenkins-cli.jar -s --url ${{ env.JENKINS_URL }} --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} upload-configuration jcasc.yaml
       - name: Reload Jenkins Configuration
         run: |
-          jenkins-cli --url http://localhost:8080/ --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} safe-restart
+          java -jar jenkins-cli.jar -s --url ${{ env.JENKINS_URL }} --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} safe-restart
       - name: Run Custom Script (Optional)  
         run: python3 test1.py
