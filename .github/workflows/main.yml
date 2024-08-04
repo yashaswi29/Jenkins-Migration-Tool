@@ -9,9 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Download Jenkins CLI
+      - name: Download Java
         run: |
-          wget https://your-jenkins-instance/cli/download
+          sudo apt-get install openjdk-11-jre-headless
+          java --version
       - uses: actions/checkout@v3
       - name: Install Jenkins CLI
         run: |
