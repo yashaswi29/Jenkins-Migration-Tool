@@ -5,11 +5,12 @@ import json
 import os
 
 host = "http://localhost:8080"
-username = "yashaswi"
-password = "11381a182513a3cd0daf1ed13ded596b66"
+username = os.environ.get('JENKINS_USER')
+password = os.environ.get('JENKINS_TOKEN')
 server = jenkins.Jenkins(host, username, password)
 user = server.get_whoami()
 version = server.get_version()
+print(user)
 print('Hello %s from Jenkins %s' % (user['fullName'], version))
 
 # creating blank jobs
@@ -28,10 +29,3 @@ print('Hello %s from Jenkins %s' % (user['fullName'], version))
 
 # #trigger jobs
 # server.build_job("job1")
-
-#last build number
-last_build_number = server.get_job_info('job1')['lastCompletedBuild']['number']
-print("Build Number", last_build_number)
-
-
-

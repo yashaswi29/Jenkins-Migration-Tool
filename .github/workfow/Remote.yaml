@@ -1,0 +1,30 @@
+name: Build Jenkins Job with Plugin Installation, JCasC and Custom Steps
+
+# on:
+#   push:
+#     branches: [ master ]
+
+jobs:
+  build_jenkins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download Jenkins CLI
+        run: |
+          wget https://your-jenkins-instance/cli/download
+      - uses: actions/checkout@v3
+      - name: Install Jenkins CLI
+        run: |
+          wget -q -O - https://get.jenkins.io/cli | bash
+      - name: Install Plugins
+        run: |
+          jenkins-cli --url https://your-jenkins-url --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} install-plugin -f plugins.txt
+      - name: Upload JCasC Configuration
+        run: |
+          jenkins-cli --url https://your-jenkins-url --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} upload-configuration jcasc.yaml
+      - name: Reload Jenkins Configuration
+        run: |
+          jenkins-cli --url https://your-jenkins-url --user ${{ secrets.JENKINS_USER }} --password ${{ secrets.JENKINS_TOKEN }} safe-restart
+      - name: Run Custom Script (Optional)  
+        run: python3 test1.py
+
