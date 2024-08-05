@@ -32,5 +32,5 @@ credentials:
               scope: GLOBAL
               id: dockerHub
               description: "Docker Hub Credentials"
-              username: yashaswi29
-              password: "{AQAAABAAAAAgGfZg0KGpvZa7P2QBrvkiSIWOHLA5e2G+Qe2dRGfhk5jR5k/h/Y+bzcJL+CZXzk8a}"
+              username: "{username}"
+              password: "{password}"
