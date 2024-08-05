@@ -2,7 +2,7 @@
 
 java -jar jenkins-cli.jar -s  http://3.7.254.62:8080/ -auth @creds who-am-i
 set -x
-for plugin in $(cat plugin.txt); do
+for plugin in $(cat plugins.txt); do
     java -jar jenkins-cli.jar \
     -s http://3.7.254.62:8080/ \
     -auth @creds \
