@@ -19,12 +19,12 @@ jobs:
           wget -q -O - https://get.jenkins.io/cli | bash
       - name: Install Plugins
         run: |
-          java -jar jenkins-cli.jar -s http://localhost:8080/ -auth @cred install-plugin -f plugins.txt
+          java -jar jenkins-cli.jar -s http://localhost:8080/ -auth @creds install-plugin -f plugins.txt
       - name: Upload JCasC Configuration
         run: |
-          java -jar jenkins-cli.jar -s http://localhost:8080/ -auth @cred upload-configuration jcasc.yaml
+          java -jar jenkins-cli.jar -s http://localhost:8080/ -auth @creds upload-configuration jcasc.yaml
       - name: Reload Jenkins Configuration
         run: |
-          java -jar jenkins-cli.jar -s http://localhost:8080/ -auth @cred safe-restart
+          java -jar jenkins-cli.jar -s http://localhost:8080/ -auth @creds safe-restart
       - name: Run Custom Script (Optional)  
         run: python3 test1.py
