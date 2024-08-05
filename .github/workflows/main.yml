@@ -8,11 +8,12 @@ jobs:
   build_jenkins:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download Java
         run: |
           java --version
-      - uses: actions/checkout@v3
+          python3 --version
+      - uses: actions/checkout@v4
       - name: Install Jenkins CLI
         run: |
           wget -q -O - https://get.jenkins.io/cli | bash
