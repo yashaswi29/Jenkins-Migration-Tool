@@ -28,8 +28,14 @@ jobs:
         run: |
           python3 -m pip install python-jenkins
 
-      - name: Run your tests
+      - name: Run/Build/Configure your jobs
         run: python3 test1.py
+
+      - uses: actions/checkout@v4
+      - name: Restarting After Instlling Plugins and 
+        run: |
+            chmod +x restart_script.sh
+            ./restart_script.sh
       
       #     java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds install-plugin -f plugins.txt 
       # - name: Upload JCasC Configuration
