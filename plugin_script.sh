@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-for plugin in $(cat plugin.txt); do
+for plugin in $(cat plugins.txt); do
     java -jar jenkins-cli.jar \
     -s http://3.111.55.36:8080/ \
     -auth @creds \
