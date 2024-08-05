@@ -14,10 +14,6 @@ jobs:
           java --version
 
       - uses: actions/checkout@v4
-      # - name: Install Jenkins CLI
-      #   run: |
-      #     java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds who-am-i
-
       - name: Install Plugins
         run: |
           chmod +x plugin_script.sh

@@ -1,10 +1,8 @@
-# 11381a182513a3cd0daf1ed13ded596b66
-
 import jenkins
 import json
 import os
 
-host = "http://localhost:8080"
+host = "http://3.7.254.62:8080/"
 username = os.environ.get('JENKINS_USER')
 password = os.environ.get('JENKINS_TOKEN')
 server = jenkins.Jenkins(host, username, password)

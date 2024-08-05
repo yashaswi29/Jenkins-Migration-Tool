@@ -1,15 +1,17 @@
 #!/bin/bash
 
-java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds who-am-i
+java -jar jenkins-cli.jar -s  http://3.7.254.62:8080/ -auth @creds who-am-i
 set -x
-while IFS= read -r plugin; do
+for plugin in $(cat plugin.txt); do
     java -jar jenkins-cli.jar \
-    -s http://3.111.55.36:8080/ \
+    -s http://3.7.254.62:8080/ \
     -auth @creds \
     install-plugin "$plugin"
-done < plugins.txt
-
+done
 java -jar jenkins-cli.jar \
-    -s http://3.111.55.36:8080/ \
+    -s http://3.7.254.62:8080/ \
     -auth @creds \
     safe-restart
+
+``
+# 111eac27585fd3bd393cf083f75fad94c4
