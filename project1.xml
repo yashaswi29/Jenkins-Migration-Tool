@@ -1,4 +1,36 @@
-<flow-definition plugin="workflow-job@1400.v7fd111b_ec82f">
+<project>
+<actions/>
+<description/>
+<keepDependencies>false</keepDependencies>
+<properties/>
+<scm class="hudson.scm.NullSCM"/>
+<canRoam>true</canRoam>
+<disabled>false</disabled>
+<blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+<blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+<triggers/>
+<concurrentBuild>false</concurrentBuild>
+<builders>
+<hudson.tasks.Shell>
+<command> ls echo My name is Yashaswi</command>
+<configuredLocalRules/>
+</hudson.tasks.Shell>
+</builders>
+<publishers/>
+<buildWrappers/>
+</project>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <flow-definition plugin="workflow-job@1400.v7fd111b_ec82f">
 <actions>
 <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2205.vc9522a_9d5711"/>
 <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2205.vc9522a_9d5711">
@@ -46,4 +78,4 @@
 </definition>
 <triggers/>
 <disabled>false</disabled>
-</flow-definition>
+</flow-definition> -->

@@ -9,21 +9,24 @@ host = "http://3.7.254.62:8080/"
 # password = os.environ.get('JENKINS_TOKEN')
 username = "yashaswi"
 password = "111eac27585fd3bd393cf083f75fad94c4"
+server = jenkins.Jenkins(host, username, password)
+user = server.get_whoami()
+version = server.get_version()
 
-if username is None or password is None:
-    print("JENKINS_USER and JENKINS_TOKEN environment variables must be set.")
-else:
-    try:
-        # Connect to Jenkins server
-        server = jenkins.Jenkins(host, username, password)
-        user = server.get_whoami()
-        version = server.get_version()
-        print(user)
-        print(f'Hello {user["fullName"]} from Jenkins {version}')
-    except jenkins.JenkinsException as e:
-        print(f"Failed to connect to Jenkins: {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+# if username is None or password is None:
+#     print("JENKINS_USER and JENKINS_TOKEN environment variables must be set.")
+# else:
+#     try:
+#         # Connect to Jenkins server
+#         server = jenkins.Jenkins(host, username, password)
+#         user = server.get_whoami()
+#         version = server.get_version()
+#         print(user)
+#         print(f'Hello {user["fullName"]} from Jenkins {version}')
+#     except jenkins.JenkinsException as e:
+#         print(f"Failed to connect to Jenkins: {e}")
+#     except Exception as e:
+#         print(f"An unexpected error occurred: {e}")
 
 
 # creating blank jobs
