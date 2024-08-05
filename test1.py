@@ -6,10 +6,18 @@ host = "http://3.7.254.62:8080/"
 username = os.environ.get('JENKINS_USER')
 password = os.environ.get('JENKINS_TOKEN')
 server = jenkins.Jenkins(host, username, password)
-user = server.get_whoami()
-version = server.get_version()
-print(user)
-print('Hello %s from Jenkins %s' % (user['fullName'], version))
+
+try:
+    user = server.get_whoami()
+    version = server.get_version()
+    print(user)
+    print('Hello %s from Jenkins %s' % (user['fullName'], version))
+except jenkins.BadHTTPException as e:
+    print(f"HTTP error occurred: {e}")
+except requests.exceptions.HTTPError as e:
+    print(f"HTTP error: {e}")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 # creating blank jobs
 # server.create_job("job1", jenkins.EMPTY_CONFIG_XML)
