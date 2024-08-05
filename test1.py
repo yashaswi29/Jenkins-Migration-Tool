@@ -29,9 +29,9 @@ else:
 # creating blank jobs
 # server.create_job("job1", jenkins.EMPTY_CONFIG_XML)
 
-#create pre planned jobs using xml and python
-# project1_xml = open ("project1.xml", mode ='r', encoding ='utf-8').read()
-# server.create_job("job2", project1_xml)
+# create pre planned jobs using xml and python
+project1_xml = open ("project1.xml", mode ='r', encoding ='utf-8').read()
+server.create_job("job2", project1_xml)
 
 #view jobs
 # jobs = server.get_jobs()
