@@ -13,11 +13,11 @@ jobs:
         run: |
           java --version
 
-      # - uses: actions/checkout@v4
-      # - name: Install Plugins
-      #   run: |
-      #     chmod +x plugin_script.sh
-      #     ./plugin_script.sh
+      - uses: actions/checkout@v4
+      - name: Install Plugins
+        run: |
+          chmod +x plugin_script.sh
+          ./plugin_script.sh
 
       - name: Set up Python environment
         uses: actions/setup-python@v3
