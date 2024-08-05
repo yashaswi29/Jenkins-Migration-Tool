@@ -21,11 +21,11 @@ jobs:
       # - name: Install Plugins
       #   run: |
       #     java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds install-plugin -f plugins.txt 
-      - name: Upload JCasC Configuration
-        run: |
-          java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds upload-configuration jcasc.yaml
-      - name: Reload Jenkins Configuration
-        run: |
-          java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds safe-restart
+      # - name: Upload JCasC Configuration
+      #   run: |
+      #     java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds upload-configuration jcasc.yaml
+      # - name: Reload Jenkins Configuration
+      #   run: |
+      #     java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds safe-restart
       - name: Run Custom Script (Optional)  
         run: python3 test1.py
