@@ -17,6 +17,7 @@ jobs:
       - name: Install Jenkins CLI
         run: |
           wget -q -O - https://get.jenkins.io/cli | bash
+          java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds who-am-i
       - name: Install Plugins
         run: |
           java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds install-plugin -f plugins.txt
