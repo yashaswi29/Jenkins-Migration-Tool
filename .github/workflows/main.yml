@@ -12,15 +12,22 @@ jobs:
       - name: Download Java
         run: |
           java --version
+
       - uses: actions/checkout@v4
       - name: Install Jenkins CLI
         run: |
           wget -q -O - https://get.jenkins.io/cli | bash
           java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds who-am-i
+
+      - name: Install Plugins
+        run: |
+          chmod +x plugin_script.sh
+          ./plugin_script.sh
+
       - name: Set up Python environment
         uses: actions/setup-python@v3
         with:
-          python-version: '3.x'  # Specify your desired Python version
+          python-version: '3.x'  
 
       - name: Install python-jenkins
         run: |
@@ -28,8 +35,7 @@ jobs:
 
       - name: Run your tests
         run: python3 test1.py
-      # - name: Install Plugins
-      #   run: |
+      
       #     java -jar jenkins-cli.jar -s http://13.201.4.9:8080/ -auth @creds install-plugin -f plugins.txt 
       # - name: Upload JCasC Configuration
       #   run: |
