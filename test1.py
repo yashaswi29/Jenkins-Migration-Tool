@@ -4,7 +4,7 @@ import json
 import os
 
 # Jenkins server configuration
-host = "http://3.7.254.62:8080/"
+host = "http://3.109.5.227:8080/"
 # username = os.environ.get('JENKINS_USER')
 # password = os.environ.get('JENKINS_TOKEN')
 username = "yashaswi"
