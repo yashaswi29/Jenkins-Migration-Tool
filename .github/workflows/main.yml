@@ -1,8 +1,8 @@
 name: Build Jenkins Job with Plugin Installation, JCasC and Custom Steps
 
-on:
-  push:
-    branches: [ master ]
+# on:
+#   push:
+#     branches: [ master ]
 
 jobs:
   build_jenkins:
