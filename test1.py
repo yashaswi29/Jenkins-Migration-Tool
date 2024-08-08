@@ -10,7 +10,7 @@ host = "http://13.201.70.135:8080/"
 username = "yashaswi"  
 password = "11cd04f2aa7260efa65d27521d88536c6e" 
 server = jenkins.Jenkins(host, username, password)
-config_dir = "/Users/yashaswitiwari/Developer/Groovy/py-jen/job_configs"
+config_dir = "job_configs"
 print(f"Using configuration directory: {config_dir}")
 
 def push_job_configs(server, config_dir):
