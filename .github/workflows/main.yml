@@ -28,7 +28,10 @@ jobs:
         run: |
           python3 -m pip install python-jenkins
 
-      - name: Run/Build/Configure your jobs
+      - name: Fetching Jobs from Server A
+        run: python3 fetch.py
+
+      - name: Run/Build/Configure your jobs to Server B
         run: python3 test1.py
 
       - uses: actions/checkout@v4

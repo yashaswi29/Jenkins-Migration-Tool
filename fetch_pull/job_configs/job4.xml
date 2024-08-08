@@ -1,0 +1,50 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1400.v7fd111b_ec82f">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2205.vc9522a_9d5711"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2205.vc9522a_9d5711">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description>project is a good project, not so good, but works well enough good.</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@3922.va_f73b_7c4246b_">
+    <script>pipeline {
+    agent any
+
+    environment {
+        PATH = &quot;${tool(&apos;nodejs21&apos;)}/bin:$PATH&quot;
+    }
+
+    stages {
+        stage(&apos;Git Checkout&apos;) {
+            steps {
+                git url: &apos;https://github.com/yashaswi29/CICD-Realtime-ChatApp.git&apos;, branch: &apos;master&apos;
+            }
+        }
+        stage(&apos;Install Dependencies&apos;) {
+            steps {
+                sh &apos;npm install&apos;
+            }
+        }
+        stage(&apos;Start Server&apos;) {
+            steps {
+                sh &apos;node server.js&apos;
+            }
+        }
+        stage(&apos;hello&apos;) {
+            steps {
+                sh &apos;echo hello world&apos;
+            }
+        }
+    }
+} </script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
