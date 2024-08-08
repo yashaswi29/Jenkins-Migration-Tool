@@ -13,9 +13,9 @@ def fetch_and_save_config(server, job_name, output_file):
         print(f"Error fetching config for job '{job_name}': {e}")
 
 def main():
-    host = "http://127.0.0.1:8080/" 
+    host = "http://35.154.135.229:8080/" 
     username = "yashaswi"
-    password = "1139610de6ccc5ed3128cfdb0dc1698920" 
+    password = "11b94281514548a5e07a4125bd13c1fb42" 
     output_dir = "job_configs"
     os.makedirs(output_dir, exist_ok=True)
 

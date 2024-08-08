@@ -11,6 +11,3 @@ done
 #     -s http://3.109.5.227:8080/ \
 #     -auth @creds \
 #     safe-restart
-
-``
-# 111eac27585fd3bd393cf083f75fad94c4

@@ -1,5 +1,4 @@
-<?xml version='1.1' encoding='UTF-8'?>
-<flow-definition plugin="workflow-job@1400.v7fd111b_ec82f">
+<?xml version="1.1" encoding="UTF-8"?><flow-definition plugin="workflow-job@1400.v7fd111b_ec82f">
   <actions>
     <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2205.vc9522a_9d5711"/>
     <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2205.vc9522a_9d5711">
@@ -17,28 +16,28 @@
     agent any
 
     environment {
-        PATH = &quot;${tool(&apos;nodejs21&apos;)}/bin:$PATH&quot;
+        PATH = "${tool('nodejs21')}/bin:$PATH"
     }
 
     stages {
-        stage(&apos;Git Checkout&apos;) {
+        stage('Git Checkout') {
             steps {
-                git url: &apos;https://github.com/yashaswi29/CICD-Realtime-ChatApp.git&apos;, branch: &apos;master&apos;
+                git url: 'https://github.com/yashaswi29/CICD-Realtime-ChatApp.git', branch: 'master'
             }
         }
-        stage(&apos;Install Dependencies&apos;) {
+        stage('Install Dependencies') {
             steps {
-                sh &apos;npm install&apos;
+                sh 'npm install'
             }
         }
-        stage(&apos;Start Server&apos;) {
+        stage('Start Server') {
             steps {
-                sh &apos;node server.js&apos;
+                sh 'node server.js'
             }
         }
-        stage(&apos;hello&apos;) {
+        stage('hello') {
             steps {
-                sh &apos;echo hello world&apos;
+                sh 'echo hello world'
             }
         }
     }

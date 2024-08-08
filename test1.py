@@ -6,11 +6,11 @@ import os
 # Jenkins server configuration
 # username = os.environ.get('JENKINS_USER')
 # password = os.environ.get('JENKINS_TOKEN')
-host = "http://3.6.39.114:8080/manage/cli/" 
+host = "http://13.201.70.135:8080/" 
 username = "yashaswi"  
-password = "11503db44711d5479c3f4d78bc92e5bfd7" 
+password = "11cd04f2aa7260efa65d27521d88536c6e" 
 server = jenkins.Jenkins(host, username, password)
-config_dir = "/Users/yashaswitiwari/Developer/Groovy/py-jen/fetch_pull/job_configs"
+config_dir = "/Users/yashaswitiwari/Developer/Groovy/py-jen/job_configs"
 print(f"Using configuration directory: {config_dir}")
 
 def push_job_configs(server, config_dir):

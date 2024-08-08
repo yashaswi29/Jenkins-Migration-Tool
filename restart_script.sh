@@ -1,5 +1,5 @@
 #!/bin/bash
 java -jar jenkins-cli.jar \
-    -s http://3.6.39.114:8080/manage/cli/ \
+    -s http://13.201.70.135:8080/ \
     -auth @creds \
     safe-restart
