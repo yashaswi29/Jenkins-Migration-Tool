@@ -2,7 +2,7 @@
 
 ### Migrate Your Jenkins Jobs, Plugins, and Server Configurations Seamlessly
 
-![Jenkins](https://img.shields.io/badge/Jenkins-Migration-blue.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Jenkins](https://img.shields.io/badge/Jenkins-Migration-blue.svg) 
 
 ## 📋 Table of Contents
 1. [Introduction](#introduction)
