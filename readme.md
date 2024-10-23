@@ -4,9 +4,10 @@
 
 ## 📝 What is the Jenkins Migration Toolkit?
 The **Jenkins Migration Toolkit** is designed to help DevOps engineers and Jenkins users seamlessly migrate their jobs, plugins, and server configurations from one Jenkins server (Server A) to another (Server B). With this toolkit, you can automate the migration process, significantly reducing manual efforts and potential errors. This repository includes comprehensive scripts, configurations, and pipelines tailored for Jenkins migrations, making it a vital resource for anyone involved in Continuous Integration and Continuous Deployment (CI/CD) practices.
-
-
-![Jenkins](https://img.shields.io/badge/Jenkins-Migration-blue.svg) 
+![Jenkins](https://img.shields.io/badge/Jenkins-Migration-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.x-blue.svg) 
+![DevOps](https://img.shields.io/badge/DevOps-Tools-orange.svg) 
+![Cloud](https://img.shields.io/badge/Cloud-Computing-green.svg)
 
 ## 📋 Table of Contents
 1. [Introduction](#introduction)
