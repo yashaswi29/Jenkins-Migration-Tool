@@ -112,7 +112,7 @@ In the `creds` file, use the following format:
 | `test1.py`         | Python script to install jobs on Server B.                         |
 | `requirements.txt` | Python dependencies required for this toolkit.                     |
 
-### ⚙️ How It Works
+### 7. ⚙️ How It Works
 
 1. **Fetch Jobs:** `fetch.py` reads job names from `job_names.txt` and pulls the job configuration from Server A.
    ```bash
@@ -135,12 +135,12 @@ In the `creds` file, use the following format:
     bash restart_script.sh
     ```
 ### ⚠️ Note: Configuration (jcasc.yaml) must be done manually on Server B.
-### 🛠 Troubleshooting
+### 8. 🛠 Troubleshooting
 - **Authentication Failed:** Make sure the API token is correct and saved in the `creds` file.
 - **Connection Issues:** Verify the URLs of both Jenkins servers.
 - **Plugins Not Installing:** Double-check the `plugins.txt` file for any misspelled plugin names.
 
-### 🤝 Contributing
+### 9. 🤝 Contributing
 We welcome contributions! Feel free to fork this repository, make your improvements, and create a pull request.
 
 ```bash
