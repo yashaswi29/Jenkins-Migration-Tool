@@ -23,7 +23,6 @@ The **Jenkins Migration Toolkit** is designed to help DevOps engineers and Jenki
 6. [How It Works](#how-it-works)
 7. [Troubleshooting](#troubleshooting)
 8. [Contributing](#contributing)
-9. [License](#license)
 
 ## 📝 Introduction
 Effortlessly migrate your Jenkins jobs, plugins, and server configurations from Server A to Server B with this toolkit. This repository contains scripts, configurations, and automated pipelines to make the migration process as seamless as possible, reducing manual work and potential errors.
